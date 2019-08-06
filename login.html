@@ -1,0 +1,143 @@
+<html>
+
+<head>
+    <title>L M S</title>
+    <style>
+        body {
+            font-family: Whitney SSm A, Whitney SSm B, Avenir, Segoe UI, Ubuntu, Helvetica Neue, Helvetica, Arial, sans-serif;
+            font-size: 2.5em;
+            /* background-color: rgba(230, 230, 230, 0.842);*/
+            
+        }
+
+        .button {
+            margin: 2em;
+            border: 1em;
+            width: 5em;
+            height: 2.5em;
+            background-color: #0e5170;
+            box-shadow: 0 3px 6px rgba(9, 97, 155, 0.4);
+            color: white;
+        }
+
+        .container {
+            box-shadow: 0 3px 6px rgba(9, 97, 155, 0.4);
+
+        }
+
+        .login {
+            float: right;
+            margin-right: 4em;
+            width: 10em;
+            height: 3em;
+        }
+
+        .company {
+            float: left;
+            margin-left: 3em;
+            width: 15em;
+            height: 8em;
+        }
+
+        .quoteBox {
+
+            float: right;
+            margin-right: 4em;
+            width: 10em;
+            height: 3em;
+        }
+
+        .quote {
+            margin: 2em;
+            font-size: 0.5em;
+        }
+
+        .icon {
+            margin: 0em 0.75em 0.2em 0.75em;
+        }
+
+        .fields {
+            /*background-image: linear-gradient(to right, red , yellow);*/
+            float: right;
+            margin-right: 4em;
+            width: 10em;
+            height: 5em;
+        }
+    </style>
+    <script>
+
+        function init() {
+            var el = document.getElementById("employee_logo");
+            var ll = document.getElementById("leader_logo");
+            var ml = document.getElementById("manager_logo");
+            el.style.boxShadow = "0 3px 6px rgba(9,97,155,0.4)";
+            ll.style.boxShadow = "none";
+            ml.style.boxShadow = "none";
+        }
+        function onClickEmployee(a) {
+            var el = document.getElementById("employee_logo");
+            var ll = document.getElementById("leader_logo");
+            var ml = document.getElementById("manager_logo");
+            if (a === 0) {
+                el.style.boxShadow = "0 3px 6px rgba(9,97,155,0.4)";
+                ll.style.boxShadow = "none";
+                ml.style.boxShadow = "none";
+            } else if (a === 1) {
+                ll.style.boxShadow = "0 3px 6px rgba(9,97,155,0.4)";
+                el.style.boxShadow = "none";
+                ml.style.boxShadow = "none";
+            } else if (a === 2) {
+                ml.style.boxShadow = "0 3px 6px rgba(9,97,155,0.4)";
+                ll.style.boxShadow = "none";
+                el.style.boxShadow = "none";
+            }
+        }
+        function loginButton() {
+            document.getElementById("fields").style.boxShadow = "0 3px 6px rgba(9, 97, 155, 0.4)";
+            document.getElementById("fields").innerHTML = "<form><table><tr><td><input type=\"text\" placeholder=\"Email\"></td></tr><tr><td><input type=\"text\" placeholder=\"Password\"></td></tr></table></form>";
+        }
+        function registerButton() {
+            document.getElementById("fields").style.boxShadow = "0 3px 6px rgba(9, 97, 155, 0.4)";
+            document.getElementById("fields").innerHTML = "<form><table><tr><td><input type=\"text\" placeholder=\"Name\"></td></tr><tr><td><input type=\"text\" placeholder=\"Email\"></td></tr><tr><td><input type=\"text\" placeholder=\"Password\"></td></tr><tr><td><input type=\"text\" placeholder=\"Confirm Password\"></td></tr></table></form>";
+        }
+    </script>
+</head>
+
+<body onload="init();">
+    <header>
+        <center>
+            <h5>Welcome to our office</h5>
+        </center>
+    </header>
+
+    <div style="float: left;">
+        <span class="icon"><img src="user.png" alt="Employee" id="employee_logo"
+                style="margin-left: 4em;margin-bottom: 0.25em" onclick="onClickEmployee(0);"></span>
+        <span class="icon"><img src="user.png" alt="Leader" class="icon" id="leader_logo"
+                onclick="onClickEmployee(1);"></span>
+        <span class="icon"><img src="user.png" alt="Manager" class="icon" id="manager_logo"
+                onclick="onClickEmployee(2);"></span>
+    </div>
+    <div class="fields" id="fields">
+
+    </div>
+
+    <div class="container company">
+
+    </div>
+
+    <div class="login">
+        <center>
+            <input class="button" type="button" value="Login" onclick="loginButton();">
+            <input class="button" type="button" value="Register" onclick="registerButton();">
+        </center>
+
+    </div>
+    <div class="container quoteBox">
+        <div class="quote">
+            <i>"Life is a race.<br>Run Run !!"</i>
+        </div>
+    </div>
+</body>
+
+</html>
