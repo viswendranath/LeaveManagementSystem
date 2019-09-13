@@ -10,13 +10,20 @@
                 <td><input type="text" placeholder="Email" id='email' onchange="validateEmail();"></td>
             </tr>
             <tr>
-                <td><input type="password" placeholder="Password"></td>
+                <td><select name="desig" id="desig" style="width: 100%">
+                    <option value="User">User</option>
+                    <option value="Leader">Leader</option>
+                    <option value="Manager">Manager</option>
+                </select></td>
             </tr>
             <tr>
-                <td><input type="password" placeholder="Confirm Password"></td>
+                <td><input id="password" type="password" placeholder="Password"></td>
             </tr>
             <tr>
-                <td align="center"><input type="button" class="button" value="SUBMIT"></td>
+                <td><input id="confirm_password" type="password" placeholder="Confirm Password" onchange="validateConfirmPassword();"</td>
+            </tr>
+            <tr>
+                <td align="center"><input type="submit" class="button" value="Register"></td>
             </tr>
         </table>
     </form>

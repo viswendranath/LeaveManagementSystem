@@ -31,3 +31,10 @@ function validateEmail() {
         document.getElementById("email").value = '';
     }
 }
+
+function validateConfirmPassword(){
+    if(document.getElementById("password").value != document.getElementById("confirm_password").value){
+        alert("Both passwords should match");
+        document.getElementById("confirm_password").value = "";
+    }
+}
