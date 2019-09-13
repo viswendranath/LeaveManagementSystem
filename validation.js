@@ -14,7 +14,7 @@ function validateEmail() {
             break;
         }
     }
-    if (atCount > 1)
+    if (atCount > 1 || atCount == 0)
         valid = false;
     console.log(atCount);
     if (atCount == 1 && valid) {
